@@ -1,0 +1,10 @@
+---
+- name: "Configure servers"
+  hosts:
+    - server
+  become: yes
+  connection: local
+  tasks:
+    - name: "Server task #1"
+      yum:
+        name: bind-utils
