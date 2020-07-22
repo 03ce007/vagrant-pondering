@@ -1,0 +1,10 @@
+---
+- name: "Configure clients"
+  hosts:
+    - client
+  become: yes
+  connection: local
+  tasks:
+    - name: "Client task #1"
+      yum:
+        name: telnet

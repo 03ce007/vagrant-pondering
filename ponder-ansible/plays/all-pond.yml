@@ -1,0 +1,30 @@
+---
+- name: "Common configuration servers"
+  hosts:
+    - all,!ansible_master
+  become: yes
+  connection: local
+  tasks:
+    - name: "Common task #1"
+      yum:
+        name: nc
+
+- name: "Configure servers"
+  hosts:
+    - server
+  become: yes
+  connection: local
+  tasks:
+    - name: "Server task #1"
+      yum:
+        name: bind-utils
+
+- name: "Configure clients"
+  hosts:
+    - client
+  become: yes
+  connection: local
+  tasks:
+    - name: "Client task #1"
+      yum:
+        name: telnet
