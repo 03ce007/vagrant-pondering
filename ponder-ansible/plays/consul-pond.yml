@@ -1,0 +1,28 @@
+---
+- name: Configure dnsmasq server
+  hosts:
+    - dnsmasq_server
+  become: yes
+  vars_files:
+    - ../vars/vars_dnsmasq.yml
+  roles:
+    - role: jriguera.dnsmasq
+    - role: jtyr.resolv_conf
+  tasks:
+    - name: Install bind-utils
+      yum:
+        name: "bind-utils"
+
+- name: Configure Consul cluster
+  hosts: consul_server,consul_client
+  any_errors_fatal: true
+  vars_files:
+    - ../vars/vars_consul.yml
+  become: true
+  pre_tasks:
+    - name: "Install yum packages"
+      yum:
+        name: ['epel-release', 'unzip', 'bind-utils', 'telnet-server', 'telnet', 'nc']
+  roles:
+    - role: brianshumate.consul
+    - role: jtyr.resolv_conf

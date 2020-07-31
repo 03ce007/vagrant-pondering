@@ -1,0 +1,16 @@
+---
+# dnsmasq related
+dnsmasq_conf_log_dns: true
+dnsmasq_conf_log: "-"
+dnsmasq_dhcp: false
+dnsmasq_tftp: false
+dnsmasq_conf_servers:
+  - '/vagrant.ponder/10.22.22.101#8600'
+dnsmasq_conf_hosts:
+  - ["10.55.44.201", "test-client01.vagrant.ponder"]
+  - ["10.55.44.202", "test-client02.vagrant.ponder"]
+
+# resolve related
+resolv_nameservers: []
+resolv_search:
+  - vagrant.ponder
