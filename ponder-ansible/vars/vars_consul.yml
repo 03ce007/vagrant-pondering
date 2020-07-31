@@ -1,0 +1,16 @@
+
+consul_version: 1.8.0
+consul_group_name: "consul_server"
+consul_log_level: "DEBUG"
+consul_iface: "eth1"
+consul_domain: "ponder"
+consul_datacenter: "pond1"
+consul_addresses_http: "{{ consul_bind_address }}"
+consul_node_name: "{{ ansible_hostname }}"
+consul_log_file: "consul.log"
+
+# resolve related
+resolv_nameservers:
+  - 10.33.44.100
+resolv_search:
+  - vagrant.ponder

@@ -1,0 +1,26 @@
+ansible01 ansible_connection=local
+dnsmasq-server01 ansible_host=10.33.44.100
+consul-server01 ansible_host=10.22.22.101 consul_node_role=bootstrap
+consul-server02 ansible_host=10.22.22.102 consul_node_role=server
+consul-server03 ansible_host=10.22.22.103 consul_node_role=server
+consul-client01 ansible_host=10.11.22.201 consul_node_role=client
+consul-client02 ansible_host=10.11.22.202 consul_node_role=client
+
+[ansible_master]
+ansible01
+
+[dnsmasq_server]
+dnsmasq-server01
+
+[consul_server]
+consul-server01
+consul-server03
+consul-server02
+
+[consul_client]
+consul-client01
+consul-client02
+
+[consul_instances:children]
+consul_server
+consul_client

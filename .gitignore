@@ -2,7 +2,7 @@
 
 # General
 .vagrant/
-
+ponder-ansible/roles/
 # Log files (if you are creating logs in debug mode, uncomment this)
 # *.logs
 
@@ -20,7 +20,8 @@
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*

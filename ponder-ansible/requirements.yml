@@ -1,0 +1,9 @@
+- name: brianshumate.consul
+  version: 'master'
+  source: 'https://github.com/ansible-community/ansible-consul.git'
+- name: jtyr.resolv_conf
+  version: 'master'
+  source: 'https://github.com/ahuffman/ansible-resolv.git'
+- name: jriguera.dnsmasq
+  version: 'master'
+  source: 'https://github.com/jriguera/ansible-role-dnsmasq.git'
