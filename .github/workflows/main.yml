@@ -54,4 +54,3 @@ jobs:
           release_name: Release ${{ needs.get-publish-version.outputs.publish-version }}
           draft: false
           prerelease: false
-          
